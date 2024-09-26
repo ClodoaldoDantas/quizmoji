@@ -1,19 +1,19 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next'
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Quizmoji",
-  description: "Quiz de emojis para você testar seus conhecimentos.",
-};
+  title: 'Quizmoji',
+  description: 'Quiz de emojis para você testar seus conhecimentos.',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br">
-      <body className={`antialiased`}>{children}</body>
+    <html lang="pt-BR">
+      <body className="antialiased">{children}</body>
     </html>
-  );
+  )
 }
