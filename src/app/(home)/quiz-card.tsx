@@ -11,7 +11,7 @@ interface QuizCardProps {
 
 export function QuizCard({ data }: QuizCardProps) {
   return (
-    <Link key={data.name} href={`/quizzes/${data.slug}`}>
+    <Link key={data.name} href={`/quiz/${data.slug}`}>
       <Card className="hover:bg-zinc-200 transition-colors duration-200 cursor-pointer">
         <CardContent className="flex flex-col items-center justify-center p-6">
           <span className="text-6xl mb-4">{data.icon}</span>
