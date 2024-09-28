@@ -1,5 +1,5 @@
 import { quizzes } from '@/data/quizzes'
-import { QuizCard } from './quiz-card'
+import { CategoryCard } from './category-card'
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {quizzes.map((quiz) => (
-            <QuizCard key={quiz.slug} data={quiz} />
+            <CategoryCard key={quiz.slug} data={quiz} />
           ))}
         </div>
       </div>
