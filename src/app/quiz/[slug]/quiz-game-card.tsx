@@ -11,6 +11,7 @@ import {
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import type { Quiz } from '@/types/quiz'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export function QuizGameCard({ quiz }: { quiz: Quiz }) {
@@ -48,7 +49,7 @@ export function QuizGameCard({ quiz }: { quiz: Quiz }) {
   const currentQuestion = quiz.questions[currentQuestionIndex]
 
   return (
-    <Card className="max-w-md w-full mx-auto">
+    <Card>
       <CardHeader>
         <CardTitle>
           {quiz.icon} {quiz.title}
@@ -65,9 +66,15 @@ export function QuizGameCard({ quiz }: { quiz: Quiz }) {
             🏆 Você acertou {score} de {totalQuestions}!
           </p>
 
-          <Button className="w-full" onClick={handleRestartQuiz}>
-            Tentar novamente
-          </Button>
+          <div className="space-y-2">
+            <Button className="w-full" onClick={handleRestartQuiz}>
+              Tentar novamente
+            </Button>
+
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/">Voltar para a página inicial</Link>
+            </Button>
+          </div>
         </CardContent>
       ) : (
         <CardContent className="space-y-6">
