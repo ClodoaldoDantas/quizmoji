@@ -1,13 +1,10 @@
-import { quizzes } from '@/data/quizzes'
-import { redirect } from 'next/navigation'
+import { fetchQuestions } from '@/http/fetch-questions'
 import { QuizGameCard } from './_components/quiz-game-card'
 
-export default function QuizPage({ params }: { params: { slug: string } }) {
-  const quiz = quizzes.find((quiz) => quiz.slug === params.slug)
-
-  if (!quiz) {
-    redirect('/')
-  }
+export default async function QuizPage({
+  params,
+}: { params: { slug: string } }) {
+  const { quiz } = await fetchQuestions({ slug: params.slug })
 
   return (
     <main className="min-h-screen w-full flex items-center justify-center py-12 px-4">

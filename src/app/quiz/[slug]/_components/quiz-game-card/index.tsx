@@ -1,7 +1,6 @@
 'use client'
 
 import { Card, CardContent } from '@/components/ui/card'
-import type { Quiz } from '@/types/quiz'
 import { useReducer } from 'react'
 import { GameHeader } from './game-header'
 import { GameOptions } from './game-options'
@@ -74,8 +73,24 @@ function quizGameReducer(state: QuizGameState, action: QuizGameAction) {
   }
 }
 
-export function QuizGameCard({ quiz }: { quiz: Quiz }) {
+type QuizGameCardProps = {
+  quiz: {
+    id: string
+    title: string
+    icon: string
+    questions: {
+      id: string
+      prompt: string
+      choices: string[]
+      correctAnswer: string
+    }[]
+  }
+}
+
+export function QuizGameCard({ quiz }: QuizGameCardProps) {
   const [state, dispatch] = useReducer(quizGameReducer, initialState)
+
+  console.log('quiz', quiz)
 
   function handleNextQuestion() {
     dispatch({
