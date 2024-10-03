@@ -9,7 +9,7 @@ type FetchQuizResponse = {
       choices: string[]
       correctAnswer: string
     }[]
-  }
+  } | null
 }
 
 type FetchQuizParams = {
@@ -22,6 +22,10 @@ export async function fetchQuiz({
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/quizzes/${slug}`,
   )
+
+  if (response.status === 404) {
+    return { quiz: null }
+  }
 
   const data = await response.json()
 

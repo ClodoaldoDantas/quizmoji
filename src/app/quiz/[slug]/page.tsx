@@ -1,10 +1,15 @@
 import { fetchQuiz } from '@/http/fetch-quiz'
+import { notFound } from 'next/navigation'
 import { QuizGameCard } from './_components/quiz-game-card'
 
 export default async function QuizPage({
   params,
 }: { params: { slug: string } }) {
   const { quiz } = await fetchQuiz({ slug: params.slug })
+
+  if (!quiz || quiz.questions.length === 0) {
+    notFound()
+  }
 
   return (
     <main className="min-h-screen w-full flex items-center justify-center py-12 px-4">

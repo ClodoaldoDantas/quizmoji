@@ -90,8 +90,6 @@ type QuizGameCardProps = {
 export function QuizGameCard({ quiz }: QuizGameCardProps) {
   const [state, dispatch] = useReducer(quizGameReducer, initialState)
 
-  console.log('quiz', quiz)
-
   function handleNextQuestion() {
     dispatch({
       type: QuizGameActionType.NEXT_QUESTION,
