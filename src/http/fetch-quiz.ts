@@ -1,4 +1,4 @@
-type FetchQuestionsResponse = {
+type FetchQuizResponse = {
   quiz: {
     id: string
     title: string
@@ -12,15 +12,15 @@ type FetchQuestionsResponse = {
   }
 }
 
-type FetchQuestionsParams = {
+type FetchQuizParams = {
   slug: string
 }
 
-export async function fetchQuestions({
+export async function fetchQuiz({
   slug,
-}: FetchQuestionsParams): Promise<FetchQuestionsResponse> {
+}: FetchQuizParams): Promise<FetchQuizResponse> {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/questions/${slug}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/quizzes/${slug}`,
   )
 
   const data = await response.json()
