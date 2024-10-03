@@ -1,6 +1,6 @@
 import { quizzes } from '@/data/quizzes'
 import { redirect } from 'next/navigation'
-import { QuizGameCard } from './quiz-game-card'
+import { QuizGameCard } from './_components/quiz-game-card'
 
 export default function QuizPage({ params }: { params: { slug: string } }) {
   const quiz = quizzes.find((quiz) => quiz.slug === params.slug)

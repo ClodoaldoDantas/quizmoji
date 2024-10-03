@@ -1,5 +1,5 @@
 import { fetchQuizzes } from '@/http/fetch-quizzes'
-import { CategoryCard } from './components/category-card'
+import { CategoryCard } from './_components/category-card'
 
 export default async function Home() {
   const { quizzes } = await fetchQuizzes()
