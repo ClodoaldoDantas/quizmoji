@@ -1,7 +1,9 @@
-import { quizzes } from '@/data/quizzes'
+import { fetchQuizzes } from '@/http/fetch-quizzes'
 import { CategoryCard } from './components/category-card'
 
 export default async function Home() {
+  const { quizzes } = await fetchQuizzes()
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {quizzes.map((quiz) => (
