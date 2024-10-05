@@ -124,6 +124,7 @@ export function QuizGameCard({ quiz }: QuizGameCardProps) {
         title={quiz.title}
         currentQuestionNumber={currentQuestionNumber}
         totalQuestions={totalQuestions}
+        showResults={state.showResults}
       />
 
       {state.showResults ? (
