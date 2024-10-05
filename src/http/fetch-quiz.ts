@@ -20,7 +20,7 @@ export async function fetchQuiz({
   slug,
 }: FetchQuizParams): Promise<FetchQuizResponse> {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/quizzes/${slug}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/quizzes/${slug}/questions`,
   )
 
   if (response.status === 404) {
