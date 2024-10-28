@@ -1,6 +1,11 @@
 ## Quizmoji 🧠
 
+[![Author](https://img.shields.io/badge/author-ClodoaldoDantas-222222)](https://github.com/ClodoaldoDantas)
+[![MIT License](https://img.shields.io/badge/License-MIT-222222.svg)](https://choosealicense.com/licenses/mit/)
+
 **Quizmoji** é um jogo interativo online, onde os usuários testam seus conhecimentos em diferentes categorias, como filmes, músicas e mais, através de desafios baseados em emojis.
+
+![image](https://github.com/user-attachments/assets/589cd201-25cc-44ba-97fb-fb77b07b7fb2)
 
 ### Tecnologias
 
