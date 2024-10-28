@@ -9,6 +9,8 @@
 - Typescript
 - Tailwind CSS
 - shadcn/ui
+- Prisma ORM
+- Neon Serverless Postgres
 
 ### Instalação
 
@@ -33,7 +35,7 @@ npm install
 4. Configure as variáveis de ambiente: Crie um arquivo `.env` na raiz do projeto com os seguintes valores:
 
 ```makefile
-NEXT_PUBLIC_API_URL=
+DATABASE_URL=
 ```
 
 4. Inicie o servidor em desenvolvimento
