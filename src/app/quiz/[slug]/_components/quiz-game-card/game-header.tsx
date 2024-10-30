@@ -28,7 +28,7 @@ export function GameHeader({
         </div>
       )}
 
-      <CardDescription className="text-base">
+      <CardDescription data-cy="current-question" className="text-base">
         Pergunta {currentQuestionNumber} de {totalQuestions}
       </CardDescription>
     </CardHeader>

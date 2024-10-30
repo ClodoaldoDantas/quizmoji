@@ -12,7 +12,12 @@ export function SubmitAnswerButton({
   isLastQuestion,
 }: SubmitAnswerButtonProps) {
   return (
-    <Button className="w-full" onClick={onNextQuestion} disabled={isDisabled}>
+    <Button
+      data-cy="reply-btn"
+      className="w-full"
+      onClick={onNextQuestion}
+      disabled={isDisabled}
+    >
       {isLastQuestion ? 'Finalizar' : 'Próxima'}
     </Button>
   )

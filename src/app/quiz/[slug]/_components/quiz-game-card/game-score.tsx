@@ -15,7 +15,7 @@ export function GameScore({
 }: GameScoreProps) {
   return (
     <CardContent className="space-y-6">
-      <p className="text-base">
+      <p data-cy="result" className="text-base">
         🏆 Você acertou {score} de {totalQuestions}!
       </p>
 

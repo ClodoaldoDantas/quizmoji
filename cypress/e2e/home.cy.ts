@@ -4,6 +4,6 @@ describe('homepage', () => {
     cy.get('a').contains('Futebol').click()
 
     cy.url().should('include', '/quiz/futebol')
-    cy.get('h3').should('contain', 'Futebol')
+    cy.get('h3').should('contain.text', 'Futebol')
   })
 })
