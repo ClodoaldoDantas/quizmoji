@@ -1,5 +1,11 @@
 import { fetchQuiz } from '@/actions/fetch-quiz'
+import { fetchQuizzes } from '@/actions/fetch-quizzes'
 import { QuizGameCard } from './_components/quiz-game-card'
+
+export async function generateStaticParams() {
+  const quizzes = await fetchQuizzes()
+  return quizzes.map((quiz) => ({ slug: quiz.slug }))
+}
 
 export default async function QuizPage({
   params,
