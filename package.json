@@ -9,6 +9,9 @@
     "biome:format": "biome check --write ./src",
     "cy:open": "cypress open"
   },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "dependencies": {
     "@prisma/client": "^5.21.1",
     "@radix-ui/react-label": "^2.1.0",
