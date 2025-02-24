@@ -1,11 +1,12 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { useReducer } from 'react'
+import { useReward } from 'react-rewards'
 import { GameHeader } from './game-header'
 import { GameOptions } from './game-options'
 import { GameScore } from './game-score'
-import { SubmitAnswerButton } from './submit-answer-button'
 
 type QuizGameState = {
   currentQuestionIndex: number
@@ -89,8 +90,15 @@ type QuizGameCardProps = {
 
 export function QuizGameCard({ quiz }: QuizGameCardProps) {
   const [state, dispatch] = useReducer(quizGameReducer, initialState)
+  const { reward } = useReward('rewardId', 'confetti')
 
-  function handleNextQuestion() {
+  function handleNextQuestion(isLastQuestion: boolean, totalQuestions: number) {
+    const isScoreGood = state.score >= Math.ceil(totalQuestions / 2)
+
+    if (isLastQuestion && isScoreGood) {
+      reward()
+    }
+
     dispatch({
       type: QuizGameActionType.NEXT_QUESTION,
       payload: {
@@ -143,11 +151,13 @@ export function QuizGameCard({ quiz }: QuizGameCardProps) {
             onValueChange={handleUpdateAnswer}
           />
 
-          <SubmitAnswerButton
-            isDisabled={!state.selectedAnswer}
-            onNextQuestion={handleNextQuestion}
-            isLastQuestion={isLastQuestion}
-          />
+          <Button
+            data-cy="reply-btn"
+            className="w-full"
+            onClick={() => handleNextQuestion(isLastQuestion, totalQuestions)}
+          >
+            {isLastQuestion ? 'Finalizar' : 'Próxima'}
+          </Button>
         </CardContent>
       )}
     </Card>

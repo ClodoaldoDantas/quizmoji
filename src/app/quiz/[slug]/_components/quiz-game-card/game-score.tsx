@@ -13,10 +13,12 @@ export function GameScore({
   totalQuestions,
   onRestartQuiz,
 }: GameScoreProps) {
+  const icon = score >= Math.ceil(totalQuestions / 2) ? '🏆' : '😢'
+
   return (
     <CardContent className="space-y-6">
       <p data-cy="result" className="text-base">
-        🏆 Você acertou {score} de {totalQuestions}!
+        {icon} Você acertou {score} de {totalQuestions}!
       </p>
 
       <div className="space-y-2">

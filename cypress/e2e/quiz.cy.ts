@@ -26,7 +26,25 @@ describe('quiz page', () => {
       'Criciúma',
     ])
 
-    cy.get("[data-cy='result']").should('contain.text', 'Você acertou 5 de 5!')
+    cy.get("[data-cy='result']").should(
+      'contain.text',
+      '🏆 Você acertou 5 de 5!',
+    )
+  })
+
+  it('should be able to see sad icon if the user answers less than half of the questions correctly', () => {
+    cy.answerQuestions([
+      'Bahia',
+      'São Paulo',
+      'Atlético Mineiro',
+      'Paraná',
+      'Criciúma',
+    ])
+
+    cy.get("[data-cy='result']").should(
+      'contain.text',
+      '😢 Você acertou 2 de 5!',
+    )
   })
 
   it('should be able to restart the quiz', () => {
