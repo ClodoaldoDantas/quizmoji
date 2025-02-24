@@ -23,14 +23,16 @@ export function GameHeader({
       <CardTitle>{`${icon} ${title}`}</CardTitle>
 
       {!showResults && (
-        <div className="py-2">
-          <Progress value={progress} className="w-full" />
-        </div>
-      )}
+        <>
+          <div className="py-2">
+            <Progress value={progress} className="w-full" />
+          </div>
 
-      <CardDescription data-cy="current-question" className="text-base">
-        Pergunta {currentQuestionNumber} de {totalQuestions}
-      </CardDescription>
+          <CardDescription data-cy="current-question" className="text-base">
+            Pergunta {currentQuestionNumber} de {totalQuestions}
+          </CardDescription>
+        </>
+      )}
     </CardHeader>
   )
 }
