@@ -13,7 +13,7 @@ export default async function QuizPage({
   const quiz = await fetchQuiz({ slug: params.slug })
 
   return (
-    <main className="min-h-screen w-full flex items-center justify-center py-12 px-4">
+    <main className="min-h-dvh w-full flex items-center justify-center py-12 px-4">
       <div className="max-w-md w-full mx-auto flex flex-col gap-4">
         <QuizGameCard quiz={quiz} />
         <span id="rewardId" className="self-center" />

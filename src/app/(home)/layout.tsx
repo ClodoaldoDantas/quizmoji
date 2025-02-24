@@ -6,7 +6,7 @@ export default function HomeLayout({
   children: ReactNode
 }) {
   return (
-    <main className="min-h-screen w-full flex items-center justify-center py-12 px-4">
+    <main className="min-h-dvh w-full flex items-center justify-center py-12 px-4">
       <div className="max-w-7xl w-full mx-auto">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-zinc-800 mb-4">
