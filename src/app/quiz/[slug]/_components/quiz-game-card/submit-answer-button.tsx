@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { useReward } from 'react-rewards'
 
 type SubmitAnswerButtonProps = {
   onNextQuestion: () => void
@@ -11,11 +12,21 @@ export function SubmitAnswerButton({
   isDisabled,
   isLastQuestion,
 }: SubmitAnswerButtonProps) {
+  const { reward } = useReward('rewardId', 'confetti')
+
+  function handleNextQuestion() {
+    if (isLastQuestion) {
+      reward()
+    }
+
+    onNextQuestion()
+  }
+
   return (
     <Button
       data-cy="reply-btn"
       className="w-full"
-      onClick={onNextQuestion}
+      onClick={handleNextQuestion}
       disabled={isDisabled}
     >
       {isLastQuestion ? 'Finalizar' : 'Próxima'}
