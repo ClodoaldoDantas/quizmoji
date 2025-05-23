@@ -9,13 +9,9 @@
 
 ### Tecnologias
 
-- React
-- Next JS
-- Typescript
-- Tailwind CSS
-- shadcn/ui
-- Prisma ORM
-- Neon Serverless Postgres
+[![My Skills](https://skillicons.dev/icons?i=react,next,ts,tailwind,prisma)](https://skillicons.dev)
+
+Outras tecnologias: shadcn/ui e Neon Serverless Postgres
 
 ### Instalação
 
